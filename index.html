@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your freelance rate and estimate project costs with FreelanceCalc - a tool for web developers">
+    <meta name="keywords" content="freelance, rate calculator, web developer, project estimator, pricing">
+    <meta name="author" content="Seyfeddine Gharbi">
+    
+    <title>FreelanceCalc | Know Your Worth</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">£</div>
+            Freelance<span>Calc</span>
+        </div>
+        <div class="tagline">Know Your Worth</div>
+    </header>
+
+    <main>
+        <!-- Rate Calculator -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">💷</div>
+                <div>
+                    <div class="card-title">Rate Calculator</div>
+                    <div class="card-subtitle">Calculate your ideal hourly rate</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="annual-income">Desired Annual Income</label>
+                <div class="input-with-prefix">
+                    <span class="input-prefix">£</span>
+                    <input type="number" id="annual-income" value="40000" min="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="billable-hours">Billable Hours Per Week</label>
+                <div class="slider-container">
+                    <input type="range" id="billable-hours" min="10" max="50" value="30">
+                    <div class="slider-value"><span id="billable-hours-value">30</span> hours</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="weeks-off">Weeks Off Per Year (Holiday + Sick)</label>
+                <div class="slider-container">
+                    <input type="range" id="weeks-off" min="2" max="10" value="5">
+                    <div class="slider-value"><span id="weeks-off-value">5</span> weeks</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="expenses">Monthly Business Expenses</label>
+                <div class="input-with-prefix">
+                    <span class="input-prefix">£</span>
+                    <input type="number" id="expenses" value="200" min="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience Level</label>
+                <select id="experience">
+                    <option value="0.8">Junior (0-2 years)</option>
+                    <option value="1" selected>Mid-Level (2-5 years)</option>
+                    <option value="1.3">Senior (5-8 years)</option>
+                    <option value="1.6">Expert (8+ years)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Project Estimator -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📐</div>
+                <div>
+                    <div class="card-title">Project Estimator</div>
+                    <div class="card-subtitle">Estimate project time and cost</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="project-type">Project Type</label>
+                <select id="project-type">
+                    <option value="landing">Landing Page</option>
+                    <option value="brochure">Brochure Site (3-5 pages)</option>
+                    <option value="blog">Blog / Portfolio</option>
+                    <option value="ecommerce">E-commerce Store</option>
+                    <option value="webapp">Web Application</option>
+                    <option value="custom">Custom Project</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Features Required</label>
+                <div class="checkbox-group" id="features">
+                    <div class="checkbox-item" data-hours="4">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">Responsive Design</span>
+                    </div>
+                    <div class="checkbox-item" data-hours="6">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">CMS Integration</span>
+                    </div>
+                    <div class="checkbox-item" data-hours="8">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">Contact Forms</span>
+                    </div>
+                    <div class="checkbox-item" data-hours="12">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">SEO Optimization</span>
+                    </div>
+                    <div class="checkbox-item" data-hours="16">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">Animations</span>
+                    </div>
+                    <div class="checkbox-item" data-hours="20">
+                        <div class="checkbox-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="checkbox-label">User Auth</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="complexity">Design Complexity</label>
+                <select id="complexity">
+                    <option value="0.8">Simple (Template-based)</option>
+                    <option value="1" selected>Standard (Custom design)</option>
+                    <option value="1.4">Complex (Unique/Intricate)</option>
+                    <option value="1.8">Premium (Award-worthy)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Project Complexity Indicator</label>
+                <div class="complexity-meter" id="complexity-meter">
+                    <div class="complexity-bar"></div>
+                    <div class="complexity-bar"></div>
+                    <div class="complexity-bar"></div>
+                    <div class="complexity-bar"></div>
+                    <div class="complexity-bar"></div>
+                </div>
+                <div class="complexity-labels">
+                    <span>Simple</span>
+                    <span>Complex</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card results-card">
+            <div class="card-header">
+                <div class="card-icon">📊</div>
+                <div>
+                    <div class="card-title">Your Numbers</div>
+                    <div class="card-subtitle">Calculated rates and project estimate</div>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-label">Minimum Rate</div>
+                    <div class="result-value" id="min-rate">£0</div>
+                    <div class="result-note">Break-even point</div>
+                </div>
+                <div class="result-item highlight">
+                    <div class="result-label">Target Rate</div>
+                    <div class="result-value" id="target-rate">£0</div>
+                    <div class="result-note">Per hour</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Project Hours</div>
+                    <div class="result-value" id="project-hours">0</div>
+                    <div class="result-note">Estimated time</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Project Total</div>
+                    <div class="result-value" id="project-total">£0</div>
+                    <div class="result-note">Quote amount</div>
+                </div>
+            </div>
+
+            <div class="breakdown">
+                <div class="breakdown-title">Rate Breakdown</div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Annual target income</span>
+                    <span class="breakdown-value" id="bd-income">£0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Annual expenses</span>
+                    <span class="breakdown-value negative" id="bd-expenses">-£0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Tax reserve (25%)</span>
+                    <span class="breakdown-value negative" id="bd-tax">-£0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Working weeks</span>
+                    <span class="breakdown-value" id="bd-weeks">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Annual billable hours</span>
+                    <span class="breakdown-value" id="bd-hours">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">Experience multiplier</span>
+                    <span class="breakdown-value positive" id="bd-exp">×1.0</span>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <button class="generate-btn" id="generate-quote">Generate Client Quote</button>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="card tips-card">
+            <div class="card-header">
+                <div class="card-icon">💡</div>
+                <div>
+                    <div class="card-title">Freelance Tips</div>
+                    <div class="card-subtitle">Advice for pricing your work</div>
+                </div>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-title">Value-Based Pricing</div>
+                    <div class="tip-text">Consider what the project is worth to the client, not just your hours. A landing page that generates £10k/month is worth more than your hourly rate suggests.</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">📝</div>
+                    <div class="tip-title">Scope Creep Buffer</div>
+                    <div class="tip-text">Always add 20-30% to your estimate. Projects almost never go exactly to plan. This protects your profitability when changes occur.</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">💬</div>
+                    <div class="tip-title">Communication Time</div>
+                    <div class="tip-text">Meetings, emails, and revisions take time. Factor in at least 20% of project hours for client communication and project management.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quote Modal -->
+    <div class="modal-overlay" id="quote-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Client Quote Preview</div>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quote-preview">
+                    <div class="quote-header">
+                        <div class="quote-logo">Freelance<span>Calc</span></div>
+                        <div class="quote-date" id="quote-date"></div>
+                    </div>
+                    <div id="quote-content"></div>
+                    <div class="quote-line quote-total">
+                        <span>Total</span>
+                        <span class="quote-value" id="quote-total-value">£0</span>
+                    </div>
+                </div>
+                <div class="quote-actions">
+                    <button class="quote-btn" id="copy-quote">Copy to Clipboard</button>
+                    <button class="quote-btn primary" id="close-modal-2">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with ☕ by an aspiring freelance web developer</p>
+        <p><a href="https://github.com/sxyfg27-mmu/freelance-calc" target="_blank">View on GitHub</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
